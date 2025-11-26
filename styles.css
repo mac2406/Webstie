@@ -219,8 +219,8 @@ p {
   font-family: "League Spartan";
   font-weight: 900;
   font-size: var(--fs-h1);
-  margin-left: 0;
-  margin-top: 15px;
+  margin-left: 75px;
+  margin-top: 40px; 
   text-transform: lowercase;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.9);
 }
