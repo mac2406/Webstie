@@ -352,13 +352,8 @@ p {
 }
 
 .delivery-right img.delivery-logo:active {
-  /* Scales down to look "pressed" */
   transform: scale(0.95) translateY(0) !important; 
-  
-  /* Reduces shadow to look closer to the "paper" */
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3)) !important;
-  
-  /* Fast transition for instant feedback */
   transition: transform 0.05s ease-out, filter 0.05s ease-out !important;
 }
 
@@ -570,8 +565,8 @@ p {
 }
 
 .hero-header img {
-  /* Increased from clamp(160px, 35vw, 500px) to make it bigger */
-  width: clamp(220px, 50vw, 700px); 
+  /* Increased to 80vw (80% of viewport width) for a much larger logo */
+  width: clamp(250px, 40vw, 600px); 
   height: auto;
   transition: transform 0.2s ease-out, filter 0.2s ease-out;
 }
@@ -801,4 +796,17 @@ p {
 
 .panel-book-inner {
   padding-bottom: 100px !important;
+}
+
+@media (max-width: 768px) {
+  .hero-header img {
+    /* Forces the logo to take up 85% of the phone's width */
+    width: 85vw !important; 
+    
+    /* Ensures it doesn't get too small on tiny phones */
+    min-width: 300px !important; 
+    
+    /* Removes any restrictions */
+    max-width: none !important; 
+  }
 }
