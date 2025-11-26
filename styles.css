@@ -151,7 +151,7 @@ p {
 
 .panel-hero {
   position: relative;
-  background: url("../assets/1.jpg") center/cover no-repeat;
+  background: url("assets/1.jpg") center/cover no-repeat;
   padding: 48px 96px 72px;
   display: flex;
   flex-direction: column;
@@ -233,7 +233,7 @@ p {
 
 .panel-menu {
   position: relative;
-  background: #d53b3a url("../assets/2.jpg") center/cover no-repeat;;
+  background: #d53b3a url("assets/2.jpg") center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -286,7 +286,7 @@ p {
 /* ========== SLIDE 3 – DELIVERY PARTNERS ========== */
 
 .panel-delivery {
-  background: url("../assets/Paradise\ On\ Your\ Platter\ Dishes.png") center/cover no-repeat;
+  background: url("assets/Paradise\ On\ Your\ Platter\ Dishes.png") center/cover no-repeat;
   padding: 0;
 }
 
@@ -374,7 +374,7 @@ p {
 /* ========== SLIDE 5 – PLAN YOUR SPECIAL DAY ========== */
 
 .panel-plan {
-  background: url("../assets/lolo.png") no-repeat left center;
+  background: url("assets/lolo.png") no-repeat left center;
 }
 
 .panel-plan-inner {
@@ -387,7 +387,6 @@ p {
 }
 
 .plan-left {
-  background-image: url("../assets/3.jpg") no-repeat;
   border: 5px solid #f7b1b1;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
@@ -470,7 +469,7 @@ p {
 /* ========== SLIDE 7 – BOOK A TABLE ========== */
 
 .panel-book {
-  background: url("../assets/5.jpg") center/cover no-repeat;
+  background: url("assets/5.jpg") center/cover no-repeat;
 }
 
 .panel-book-inner {
@@ -541,6 +540,20 @@ p {
     align-items: flex-start;
   }
 
+  .hero-header {
+    position: static;
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+
+  .hero-title {
+    max-width: 100%;
+  }
+
+  .hero-heading {
+    margin-left: 0;
+  }
+
   .panel-menu-inner,
   .panel-delivery-inner,
   .panel-plan-inner,
@@ -581,8 +594,21 @@ p {
     padding: 14px 28px;
   }
 
+  .btn-white {
+    width: 100%;
+    max-width: 280px;
+    height: 44px;
+  }
+
   .hours-row {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+/* Additional tweak for very small screens */
+@media (max-width: 480px) {
+  .hero-sub {
+    font-size: 1.2rem;
   }
 }
