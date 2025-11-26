@@ -351,6 +351,17 @@ p {
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.7));
 }
 
+.delivery-right img.delivery-logo:active {
+  /* Scales down to look "pressed" */
+  transform: scale(0.95) translateY(0) !important; 
+  
+  /* Reduces shadow to look closer to the "paper" */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3)) !important;
+  
+  /* Fast transition for instant feedback */
+  transition: transform 0.05s ease-out, filter 0.05s ease-out !important;
+}
+
 /* Social icons */
 .social-icons .icon-circle {
   transition: transform 0.2s ease-out, filter 0.2s ease-out;
