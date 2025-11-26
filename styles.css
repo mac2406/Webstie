@@ -495,7 +495,7 @@ p {
 
 .blog-heading {
   color: #111111;
-  font-size: 5rem;
+  font-size: 3.5rem;
   text-shadow: 0 8px 26px rgba(255, 255, 255, 0.8);
 }
 
@@ -559,7 +559,8 @@ p {
 }
 
 .hero-header img {
-  width: clamp(160px, 35vw, 500px);
+  /* Increased from clamp(160px, 35vw, 500px) to make it bigger */
+  width: clamp(220px, 50vw, 700px); 
   height: auto;
   transition: transform 0.2s ease-out, filter 0.2s ease-out;
 }
