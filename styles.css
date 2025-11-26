@@ -387,16 +387,13 @@ p {
 
 /* ========== SLIDE 4 – LOCATION / CONTACT ========== */
 
-/* ========== SLIDE 4 – LOCATION / CONTACT ========== */
-
 .panel-location {
   position: relative;
-  /* This creates a rich golden background using your brand color + floral pattern */
   background-color: #f7c879;
-  background-image: 
-    linear-gradient(rgba(247, 200, 121, 0.8), rgba(247, 200, 121, 0.8)), 
+  background-image:
+    linear-gradient(rgba(247, 200, 121, 0.8), rgba(247, 200, 121, 0.8)),
     url("assets/Paradise On Your Platter Dishes.png");
-  background-size: 350px; /* Adjust pattern scale */
+  background-size: 350px;
   background-repeat: repeat;
   background-position: center;
   overflow: hidden;
@@ -408,10 +405,10 @@ p {
   width: 100%;
   height: 100%;
   /* 'contain' ensures the whole video is visible */
-  object-fit: contain; 
+  object-fit: contain;
   object-position: center;
   /* Adds a subtle shadow to separate the video from the pattern */
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 .location-overlay {
