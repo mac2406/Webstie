@@ -410,6 +410,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   padding-left: 64px;
   text-align: left;
   max-width: 520px;
