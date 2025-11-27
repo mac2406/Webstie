@@ -191,7 +191,7 @@ p {
   font-family: "League Spartan";
   font-weight: 900;
   font-size: var(--fs-h1);
-  margin-left: 0;
+  margin-left: 75px;
   /* Increased spacing to prevent 'I' overlap */
   margin-top: 60px; 
   text-transform: lowercase;
