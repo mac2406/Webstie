@@ -127,7 +127,6 @@ p {
 }
 
 .btn-white:hover {
-  background: #f6f6f6;
   transform: translateY(-2px) scale(1.02);
 }
 
@@ -216,14 +215,20 @@ p {
   margin: 0;
 }
 
-/* ========== SLIDE 2 – MENU + DELIVERY (Updated) ========== */
+/* ========== SLIDE 2 – MENU + DELIVERY (Responsive & Unified) ========== */
 .panel-menu {
-  background: url("assets/slide2.png") center/cover no-repeat;
+  /* Unified background for the whole slide */
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("assets/lolo.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .panel-menu-inner {
   display: grid;
-  /* Grid ratio: 0.6fr Text / 1.4fr Image */
   grid-template-columns: 0.6fr 1.4fr; 
   padding: 0 !important;
   height: 100vh;
@@ -237,11 +242,10 @@ p {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  
-  /* CHANGED: Increased left padding to 15% to shift content right */
+  /* Desktop padding pushes content right */
   padding: 60px 5% 60px 15%; 
-  
-
+  /* Transparent so parent background shows */
+  background-color: transparent; 
   z-index: 10;
 }
 
@@ -265,17 +269,18 @@ p {
 }
 
 .delivery-title {
-  font-family: "League Spartan", sans-serif;
+  font-family: "League Spartan";
   font-weight: 800;
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #000000;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
+/* Desktop Icons (Single Line) */
 .delivery-icons-row {
   display: flex;
-  gap: 10px; 
+  gap: 15px; 
   flex-wrap: nowrap;
   align-items: center;
   margin-top: 25px;
@@ -284,8 +289,8 @@ p {
 
 .delivery-icons-row img {
   width: 100%; 
-  max-width: 90px;
-  min-width: 50px;
+  max-width: 150px;
+  min-width: 80px;
   height: auto;
   padding: 0 !important;  
   border: none !important;
@@ -303,35 +308,42 @@ p {
   transform: scale(0.95);
 }
 
+/* Image Container */
 .menu-right {
   position: relative;
   width: 100%;
   height: 100%;
-  /* Removed margin-left to snap the image back to its position */
   margin: 0 !important; 
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding-bottom: 24px;
-  padding-right: 24px;
+  align-items: center;
+  justify-content: center;
 }
+
 .menu-food-image {
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  max-width: 700px;
+  height: auto;
+  max-height: 70vh; 
   object-fit: cover;
-  object-position: center;
+  border: 5px solid rgba(255,255,255,0.8);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   display: block;
 }
 
 .chef-credit {
-  color: #ffffff;
-  font-size: 1.2rem;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
   text-align: right;
+  font-family: 'League Spartan';
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
   line-height: 1.4;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* ========== SLIDE 3 – LOCATION / VIDEO ========== */
@@ -536,6 +548,7 @@ p {
   overflow: hidden;
 }
 
+/* --- UPDATED SOCIAL ICONS --- */
 .book-socials {
   display: flex;
   flex-direction: column;
@@ -543,15 +556,34 @@ p {
   padding-bottom: 10px;
 }
 
-.book-socials img {
-  width: 35px;
-  height: 35px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s;
+/* Common style for the SVG icons */
+.book-socials svg {
+  width: 40px;  /* Set good size */
+  height: 40px;
+  fill: #ffffff; /* Make them white */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); /* Adds shadow for visibility */
+  transition: transform 0.2s ease, fill 0.2s ease;
+  cursor: pointer;
 }
 
-.book-socials img:hover {
-  transform: scale(1.1);
+.book-socials a {
+  display: block;
+  line-height: 0; /* Prevents weird spacing */
+}
+
+/* Hover Effect */
+.book-socials a:hover svg {
+  transform: scale(1.15);
+  fill: var(--accent); /* Turns red on hover */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 1024px) {
+  .book-socials {
+    flex-direction: row; /* Horizontal on mobile */
+    justify-content: center;
+    padding-bottom: 30px;
+  }
 }
 
 .page-footer {
@@ -612,49 +644,67 @@ p {
     margin-top: 30px;
   }
 
-  /* --- MENU MOBILE (Vertical Stack) --- */
+  /* --- MENU MOBILE (Vertical Stack & Unified Background) --- */
   .panel-menu-inner {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 50vh; 
+    grid-template-rows: auto auto; /* Allow content height */
     height: auto;
     min-height: 100vh;
   }
 
   .menu-left {
-    padding: 60px 30px;
+    padding: 80px 20px 40px; /* Centered padding */
     order: 1;
     align-items: center;
     text-align: center;
   }
+  
+  .menu-left .block-heading {
+    font-size: 3rem;
+    line-height: 1;
+  }
 
-  /* --- MOBILE ICONS GRID --- */
+  .menu-delivery-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Mobile Icons Grid (2x2) */
   .delivery-icons-row {
-    display: grid; /* Grid for mobile */
-    grid-template-columns: repeat(2, 1fr); /* 2x2 Layout */
-    gap: 20px;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px;
     justify-items: center;
     margin-top: 30px;
+    width: 100%;
+    max-width: 350px;
   }
   
   .delivery-icons-row img {
-    width: 100px; /* Fixed size for mobile grid */
-    max-width: none;
+    width: 100%;
+    max-width: 120px; /* Big icons on mobile */
+    height: auto;
   }
 
   .menu-right {
     order: 2;
     width: 100%;
-    height: 100%;
-    min-height: 400px;
-    padding-bottom: 16px;
-    padding-right: 16px;
+    min-height: 300px;
+    height: auto;
+    margin: 0 !important;
+  }
+  
+  .menu-food-image {
+    width: 90%;
+    margin: 0 auto;
   }
   
   .chef-credit {
+    bottom: 20px;
+    right: 20px;
     font-size: 1rem;
-    margin: 0;
   }
-}
 
   /* --- PLAN MOBILE --- */
   .panel-plan-inner {
@@ -712,3 +762,4 @@ p {
     justify-content: center;
     padding-bottom: 20px;
   }
+}
