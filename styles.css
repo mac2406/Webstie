@@ -207,7 +207,7 @@ p {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(24px, 6vw, 70px);
+  gap: clamp(30px, 10vw, 70px);
 }
 
 .hero-script {
@@ -215,7 +215,7 @@ p {
   font-family: "Amsterdam", cursive;
   font-size: var(--fs-script);
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: clamp(-20px, -4vw, -50px);
   color: #ffffff;
   text-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
 }
@@ -225,12 +225,35 @@ p {
   font-family: "League Spartan";
   font-weight: 900;
   font-size: var(--fs-h1);
-  margin-left: 0;
-  margin-top: 0; 
+  margin-left: clamp(0px, 6vw, 70px);
+  margin-bottom: clamp(30px, 8vw, 80px); 
   text-transform: lowercase;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.9);
 }
 
+@media (max-width: 1024px) {
+  .hero-script {
+    margin-bottom: clamp(-10px, -2vw, -25px);
+  }
+  .hero-heading {
+    margin-left: 0;
+    margin-bottom: clamp(20px, 6vw, 50px);
+  }
+}
+
+.hero-subtext {
+  display: block;
+  font-family: "League Spartan";
+  font-weight: 600;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-left: 40px;
+  margin-top: -60px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+}
 .hero-right {
   text-align: right;
   max-width: 500px;
