@@ -10,17 +10,20 @@
   --fs-script: clamp(3rem, 10vw, 10rem);
   --fs-sub: clamp(1rem, 3vw, 1.5rem);
   --fs-btn: clamp(0.9rem, 2vw, 1.1rem);
-  
+
   /* Responsive Spacing */
   --space-x: clamp(20px, 5vw, 80px);
   --space-y: clamp(40px, 8vh, 80px);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -144,7 +147,7 @@ p {
   width: 30px;
   height: 30px;
   fill: #ffffff;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
   transition: transform 0.2s ease, fill 0.2s ease;
 }
 
@@ -170,21 +173,22 @@ p {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 100%);
 }
 
-.panel-hero > * {
+.panel-hero>* {
   position: relative;
   z-index: 1;
 }
 
 .hero-header {
   position: absolute;
-  top: 90px; /* Moved down to avoid overlapping fixed icons */
+  top: 90px;
+  /* Moved down to avoid overlapping fixed icons */
   right: 72px;
   display: flex;
   align-items: center;
 }
 
 .hero-header img {
-  width: clamp(250px, 40vw, 600px); 
+  width: clamp(250px, 40vw, 600px);
   height: auto;
   transition: transform 0.2s ease-out, filter 0.2s ease-out;
 }
@@ -200,6 +204,10 @@ p {
 .hero-title {
   max-width: 100%;
   align-self: flex-end;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(24px, 6vw, 70px);
 }
 
 .hero-script {
@@ -207,6 +215,7 @@ p {
   font-family: "Amsterdam", cursive;
   font-size: var(--fs-script);
   line-height: 1;
+  margin-bottom: 20px;
   color: #ffffff;
   text-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
 }
@@ -216,8 +225,8 @@ p {
   font-family: "League Spartan";
   font-weight: 900;
   font-size: var(--fs-h1);
-  margin-left: 75px;
-  margin-top: 60px; 
+  margin-left: 0;
+  margin-top: 0; 
   text-transform: lowercase;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.9);
 }
@@ -250,7 +259,7 @@ p {
 
 .panel-menu-inner {
   display: grid;
-  grid-template-columns: 0.6fr 1.4fr; 
+  grid-template-columns: 0.6fr 1.4fr;
   padding: 0 !important;
   height: 100vh;
   width: 100%;
@@ -263,16 +272,17 @@ p {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: 60px 5% 60px 15%; 
-  background-color: transparent; /* Removed solid color */
+  padding: 60px 5% 60px 15%;
+  background-color: transparent;
+  /* Removed solid color */
   z-index: 10;
 }
 
 .menu-left .block-heading {
-  font-size: clamp(2rem, 4vw, 4rem); 
+  font-size: clamp(2rem, 4vw, 4rem);
   margin-bottom: 30px;
   line-height: 1.1;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .menu-left .btn-white {
@@ -292,13 +302,14 @@ p {
   font-weight: 800;
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #ffffff; /* White text to contrast with dark background */
+  color: #ffffff;
+  /* White text to contrast with dark background */
   text-transform: uppercase;
 }
 
 .delivery-icons-row {
   display: flex;
-  gap: 15px; 
+  gap: 15px;
   flex-wrap: nowrap;
   align-items: center;
   margin-top: 25px;
@@ -306,15 +317,16 @@ p {
 }
 
 .delivery-icons-row img {
-  width: 100%; 
+  width: 100%;
   max-width: 150px;
   min-width: 80px;
   height: auto;
-  padding: 0 !important;  
+  padding: 0 !important;
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* Added shadow */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  /* Added shadow */
   transition: transform 0.2s ease;
   flex-shrink: 1;
 }
@@ -331,7 +343,7 @@ p {
   position: relative;
   width: 100%;
   height: 100%;
-  margin: 0 !important; 
+  margin: 0 !important;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -342,12 +354,14 @@ p {
   width: 65%;
   max-width: 500px;
   height: auto;
-  max-height: 80vh; 
+  max-height: 80vh;
   object-fit: cover;
-  border: 5px solid rgba(255,255,255,0.8); /* Added border like Page 4 */
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  /* Added border like Page 4 */
   border-radius: 8px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   display: block;
+  margin-bottom: 10%;
 }
 
 .chef-credit {
@@ -358,7 +372,7 @@ p {
   font-family: 'League Spartan';
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: white;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
   line-height: 1.4;
   z-index: 2;
   pointer-events: none;
@@ -368,8 +382,8 @@ p {
 .panel-location {
   position: relative;
   background-color: #f7c879;
-  background-image: 
-    linear-gradient(rgba(247, 200, 121, 0.85), rgba(247, 200, 121, 0.85)), 
+  background-image:
+    linear-gradient(rgba(247, 200, 121, 0.85), rgba(247, 200, 121, 0.85)),
     url("assets/Paradise On Your Platter Dishes.png");
   background-size: 350px;
   background-repeat: repeat;
@@ -394,7 +408,7 @@ p {
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
 /* ========== SLIDE 4 – PLAN ========== */
@@ -438,7 +452,7 @@ p {
 .plan-heading {
   font-size: 3.4rem;
   /* Reduced from default 32px to 15px to pull subtitle closer */
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   line-height: 1.1;
 }
 
@@ -446,12 +460,12 @@ p {
   font-size: 1.2rem;
   font-style: italic;
   /* Reduced from 32px to 24px to pull button closer */
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
 }
 
 /* ========== SLIDE 5 – BOOKING ========== */
 .panel-book-new {
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.5)), url('assets/5.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)), url('assets/5.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -491,7 +505,7 @@ p {
   font-weight: 800;
   margin: 0 0 15px 0;
   line-height: 1;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .book-btn {
@@ -509,72 +523,72 @@ p {
   align-items: flex-end;
 }
 
+/* --- FIXED ALIGNMENT FOR TIMINGS & CONTACT --- */
+
 .book-info {
   font-family: "League Spartan", sans-serif;
   text-align: center;
-  /* Lifts the content up from the bottom */
-  padding-bottom: 40px; 
+  padding-bottom: 40px;
+  width: 100%;
 }
 
 .info-title {
-  font-size: 2.2rem;
-  margin-bottom: 20px; 
+  /* Scales font size so it doesn't look huge on mobile */
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
   font-weight: 700;
   text-align: center;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .timing-grid {
   display: grid;
-  /* Creates two equal columns for a perfect center alignment */
-  grid-template-columns: 1fr 1fr; 
-  width: 100%;
-  max-width: 480px; /* Prevents columns from being too far apart */
-  margin: 0 auto 100px auto;
-  
-  /* Adjusted font size for elegance (not too huge) */
-  font-size: 1.6rem; 
+  grid-template-columns: max-content max-content;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
   font-weight: 600;
-  
-  /* Vertical gap | Horizontal gap */
-  gap: 12px 20px; 
-  margin-bottom: 140px;
+  gap: 10px 24px;
+  justify-content: center;
 }
 
-.timing-grid .day { 
-  text-align: center; 
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+.timing-grid .day {
+  text-align: left;
+  white-space: nowrap;
+  /* Forces "Monday - Friday" to stay on one line */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.timing-grid .time { 
-  text-align: center; 
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+.timing-grid .time {
+  text-align: left;
+  white-space: nowrap;
+  /* Forces time to stay on one line */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   gap: 18px;
-  width: 100%;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start; /* Aligns icon with the top line of text */
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.3rem);
   font-weight: 500;
-  text-align: left;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.contact-item .icon { 
+.contact-item .icon {
   font-size: 1.4rem;
-  /* Slight nudge to align perfectly with text */
-  margin-top: 2px; 
+  margin-top: 2px;
 }
 
 .book-map-area {
@@ -591,11 +605,11 @@ p {
 
 .map-box {
   width: 100%;
-  height: 350px; 
-  border: 3px solid #ffffff !important; 
-  border-radius: 8px; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-  background: rgba(255,255,255,0.1);
+  height: 350px;
+  border: 3px solid #ffffff !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
 
@@ -610,7 +624,7 @@ p {
   width: 40px;
   height: 40px;
   fill: #ffffff;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
   transition: transform 0.2s ease, fill 0.2s ease;
   cursor: pointer;
 }
@@ -648,7 +662,7 @@ p {
 
 @media (max-width: 1024px) {
   .panel-inner {
-    padding: 40px 30px;
+    padding: 40px 20px;
   }
 
   /* --- HERO MOBILE --- */
@@ -674,6 +688,7 @@ p {
   .hero-title {
     text-align: center;
     order: 1;
+    align-items: center;
   }
 
   .hero-right {
@@ -683,8 +698,7 @@ p {
     margin-top: 30px;
   }
 
-  /* --- MENU MOBILE (Vertical Stack & Unified Background) --- */
-  /* --- MENU MOBILE (Vertical Stack & Unified Background) --- */
+  /* --- MENU MOBILE --- */
   .panel-menu-inner {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto; 
@@ -710,7 +724,6 @@ p {
     flex-direction: column;
   }
 
-  /* Mobile Icons Grid (2x2) */
   .delivery-icons-row {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -737,7 +750,7 @@ p {
   
   .menu-food-image {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
   }
   
   .chef-credit {
@@ -750,7 +763,7 @@ p {
   .panel-plan-inner {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 60px 30px;
+    padding: 60px 20px;
   }
 
   .plan-right {
@@ -759,7 +772,7 @@ p {
     padding: 0;
   }
 
-  /* --- BOOKING MOBILE --- */
+  /* --- BOOKING MOBILE (Centered & Aligned) --- */
   .book-layout {
     height: auto;
     min-height: 100vh;
@@ -782,19 +795,42 @@ p {
   .book-content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .book-info {
     text-align: center;
+    width: 100%;
+    padding-bottom: 0;
   }
 
+  /* FIXED TIMING GRID FOR MOBILE */
   .timing-grid {
     justify-content: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 30px auto;
+    width: fit-content; 
+    /* Reduced gap and font size to fit perfectly on phones */
+    gap: 5px 15px; 
+    font-size: 1.2rem; 
   }
 
   .contact-details {
     align-items: center;
+    width: 100%;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    /* Ensure icon doesn't look weird next to wrapped text */
+    align-items: center; 
+  }
+
+  .book-map-area {
+    width: 100%;
   }
 
   .book-socials {
