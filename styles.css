@@ -130,6 +130,29 @@ p {
   transform: translateY(-2px) scale(1.02);
 }
 
+/* --- GLOBAL SOCIALS (Fixed Top-Right) --- */
+.global-socials {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+  z-index: 9999;
+}
+
+.global-socials svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.global-socials a:hover svg {
+  transform: scale(1.15);
+  fill: var(--accent);
+}
+
 /* ========== SLIDE 1 – HERO ========== */
 .panel-hero {
   position: relative;
@@ -154,7 +177,7 @@ p {
 
 .hero-header {
   position: absolute;
-  top: 40px;
+  top: 90px; /* Moved down to avoid overlapping fixed icons */
   right: 72px;
   display: flex;
   align-items: center;
@@ -193,7 +216,7 @@ p {
   font-family: "League Spartan";
   font-weight: 900;
   font-size: var(--fs-h1);
-  margin-left: 0;
+  margin-left: 75px;
   margin-top: 60px; 
   text-transform: lowercase;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.9);
@@ -215,12 +238,9 @@ p {
   margin: 0;
 }
 
-/* ========== SLIDE 2 – MENU + DELIVERY (Responsive & Unified) ========== */
+/* ========== SLIDE 2 – MENU + DELIVERY ========== */
 .panel-menu {
-  /* Unified background for the whole slide */
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-    url("assets/lolo.png");
+  background: url("assets/lolo.png");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -242,9 +262,7 @@ p {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  /* Desktop padding pushes content right */
   padding: 60px 5% 60px 15%; 
-  /* Transparent so parent background shows */
   background-color: transparent; 
   z-index: 10;
 }
@@ -277,7 +295,6 @@ p {
   text-transform: uppercase;
 }
 
-/* Desktop Icons (Single Line) */
 .delivery-icons-row {
   display: flex;
   gap: 15px; 
@@ -308,7 +325,6 @@ p {
   transform: scale(0.95);
 }
 
-/* Image Container */
 .menu-right {
   position: relative;
   width: 100%;
@@ -321,10 +337,10 @@ p {
 }
 
 .menu-food-image {
-  width: 85%;
-  max-width: 700px;
+  width: 65%;
+  max-width: 500px;
   height: auto;
-  max-height: 70vh; 
+  max-height: 80vh; 
   object-fit: cover;
   border: 5px solid rgba(255,255,255,0.8);
   border-radius: 8px;
@@ -337,7 +353,7 @@ p {
   bottom: 30px;
   right: 30px;
   text-align: right;
-  font-family: 'League Spartan';
+  font-family: "League Spartan";
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: white;
   text-shadow: 0 2px 8px rgba(0,0,0,0.9);
@@ -419,12 +435,16 @@ p {
 
 .plan-heading {
   font-size: 3.4rem;
+  /* Reduced from default 32px to 15px to pull subtitle closer */
+  margin-bottom: 15px; 
+  line-height: 1.1;
 }
 
 .plan-sub {
   font-size: 1.2rem;
   font-style: italic;
-  margin-bottom: 32px;
+  /* Reduced from 32px to 24px to pull button closer */
+  margin-bottom: 24px; 
 }
 
 /* ========== SLIDE 5 – BOOKING ========== */
@@ -489,42 +509,71 @@ p {
 
 .book-info {
   font-family: "League Spartan", sans-serif;
+  text-align: center;
+  /* Lifts the content up from the bottom */
+  padding-bottom: 40px; 
 }
 
 .info-title {
   font-size: 2.2rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px; 
   font-weight: 700;
   text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .timing-grid {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 10px 30px;
-  font-size: 1.2rem;
+  /* Creates two equal columns for a perfect center alignment */
+  grid-template-columns: 1fr 1fr; 
+  width: 100%;
+  max-width: 480px; /* Prevents columns from being too far apart */
+  margin: 0 auto 100px auto;
+  
+  /* Adjusted font size for elegance (not too huge) */
+  font-size: 1.6rem; 
   font-weight: 600;
-  margin-bottom: 30px;
+  
+  /* Vertical gap | Horizontal gap */
+  gap: 12px 20px; 
+  margin-bottom: 140px;
 }
 
-.timing-grid .day { font-weight: 700; }
-.timing-grid .time { text-align: right; }
+.timing-grid .day { 
+  text-align: center; 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.timing-grid .time { 
+  text-align: center; 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: left;
+  gap: 18px;
+  width: 100%;
 }
 
 .contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Aligns icon with the top line of text */
+  justify-content: left;
   gap: 12px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  text-align: left;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.contact-item .icon { font-size: 1.4rem; }
+.contact-item .icon { 
+  font-size: 1.4rem;
+  /* Slight nudge to align perfectly with text */
+  margin-top: 2px; 
+}
 
 .book-map-area {
   display: flex;
@@ -540,7 +589,7 @@ p {
 
 .map-box {
   width: 100%;
-  height: 220px;
+  height: 350px; 
   border: 3px solid #ffffff !important; 
   border-radius: 8px; 
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
@@ -548,7 +597,6 @@ p {
   overflow: hidden;
 }
 
-/* --- UPDATED SOCIAL ICONS --- */
 .book-socials {
   display: flex;
   flex-direction: column;
@@ -556,34 +604,23 @@ p {
   padding-bottom: 10px;
 }
 
-/* Common style for the SVG icons */
 .book-socials svg {
-  width: 40px;  /* Set good size */
+  width: 40px;
   height: 40px;
-  fill: #ffffff; /* Make them white */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); /* Adds shadow for visibility */
+  fill: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
   transition: transform 0.2s ease, fill 0.2s ease;
   cursor: pointer;
 }
 
 .book-socials a {
   display: block;
-  line-height: 0; /* Prevents weird spacing */
+  line-height: 0;
 }
 
-/* Hover Effect */
 .book-socials a:hover svg {
   transform: scale(1.15);
-  fill: var(--accent); /* Turns red on hover */
-}
-
-/* Mobile Adjustment */
-@media (max-width: 1024px) {
-  .book-socials {
-    flex-direction: row; /* Horizontal on mobile */
-    justify-content: center;
-    padding-bottom: 30px;
-  }
+  fill: var(--accent);
 }
 
 .page-footer {
@@ -647,13 +684,13 @@ p {
   /* --- MENU MOBILE (Vertical Stack & Unified Background) --- */
   .panel-menu-inner {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto; /* Allow content height */
+    grid-template-rows: auto auto; 
     height: auto;
     min-height: 100vh;
   }
 
   .menu-left {
-    padding: 80px 20px 40px; /* Centered padding */
+    padding: 80px 20px 40px; 
     order: 1;
     align-items: center;
     text-align: center;
@@ -683,7 +720,7 @@ p {
   
   .delivery-icons-row img {
     width: 100%;
-    max-width: 120px; /* Big icons on mobile */
+    max-width: 120px; 
     height: auto;
   }
 
@@ -761,5 +798,10 @@ p {
     flex-direction: row;
     justify-content: center;
     padding-bottom: 20px;
+  }
+  
+  .global-socials {
+    right: 20px;
+    top: 20px;
   }
 }
