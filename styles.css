@@ -387,20 +387,6 @@ p {
   margin-bottom: 10%;
 }
 
-.chef-credit {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  text-align: right;
-  font-family: 'League Spartan';
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-  line-height: 1.4;
-  z-index: 2;
-  pointer-events: none;
-}
-
 /* ========== SLIDE 3 – LOCATION / VIDEO ========== */
 .panel-location {
   position: relative;
